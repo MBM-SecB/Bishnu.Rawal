@@ -5,11 +5,13 @@ namespace LearningClasses
         public string Name { get; set; }
         public int Population { get; set; }
 
+        public static readonly bool IsOnEarth;
+
+        //Instance contructors
+
         // Default constructor - parameter less
         public Country()
-        {
-
-        }
+        { }
 
         // Parameterized contructor
         public Country(string name)
@@ -22,13 +24,19 @@ namespace LearningClasses
             Name = name;
             Population = population;
         }
+
+        // static constructor
+        static Country()
+        {
+            IsOnEarth = true;
+        }
     }
 
     public class Demo
     {
         void DoSomething()
         {
-            Country country1 = new Country();   
+            Country country1 = new Country();             
             Country country2 = new Country("Nepal");                     
         }
     }
