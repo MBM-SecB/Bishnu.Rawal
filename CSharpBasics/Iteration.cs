@@ -4,7 +4,7 @@ namespace SelectAndLoop
 {
     class IterationStatement
     {
-        static void Main()
+        static void Main12()
         {
             IterationStatement iterationStatement = new IterationStatement();            
             iterationStatement.LearnWhileLoops();
