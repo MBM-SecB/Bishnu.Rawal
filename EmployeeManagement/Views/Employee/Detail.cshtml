@@ -1,6 +1,10 @@
 @model Employee
 
-<h1>Employee Detail</h1>
+@{
+  ViewData["Title"] = @Model.FirstName + " " + @Model.Surname;
+}
+
+<h1>Employee Detail <a href="/employee/index">Go Back</a></h1>
 
 <ul class="list-group list-group-flush">
   <li class="list-group-item">First Name : @Model.FirstName</li>
