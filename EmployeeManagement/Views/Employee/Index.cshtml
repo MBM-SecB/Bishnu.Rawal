@@ -17,22 +17,28 @@
       <th scope="col">Salary</th>
     </tr>
   </thead>
-  <tbody>   
+  <tbody>
     @for (int i = 0; i < Model.Count; i++)
     {
-        <tr>
-          <td>@(i+1)</td>
+      <tr>
+        <td>@(i+1)</td>
+        <td>
+          @{
+            string fn = Model[i].FirstName;
+          }
+          <a href="/employee/detail?id=@Model[i].Id">@fn</a>
+        </td>
+        <td>@Model[i].Surname</td>
+        <td>@Model[i].Address</td>
+        <td>@Model[i].Gender</td>
+        <td>@Model[i].Salary</td>
+        
+        <form asp-controller="Employee" asp-action="Delete" asp-route-id="@Model[i].Id" method="POST">
           <td>
-            @{
-              string fn = Model[i].FirstName;              
-            }
-            <a href="/employee/detail?firstName=@fn">@fn</a>
-          </td>
-          <td>@Model[i].Surname</td>
-          <td>@Model[i].Address</td>
-          <td>@Model[i].Gender</td>
-          <td>@Model[i].Salary</td>
-        </tr>
+            <input type="submit" value="Delete">
+          <td>
+        </form>
+      </tr>
     }
   </tbody>
 </table>
