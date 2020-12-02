@@ -15,6 +15,8 @@
       <th scope="col">Address</th>
       <th scope="col">Gender</th>
       <th scope="col">Salary</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -33,11 +35,13 @@
         <td>@Model[i].Gender</td>
         <td>@Model[i].Salary</td>
         
+        <td><a class="btn btn-outline-primary" href="/Employee/Edit?id=@Model[i].Id">Edit</a></td>
         <form asp-controller="Employee" asp-action="Delete" asp-route-id="@Model[i].Id" method="POST">
           <td>
             <input type="submit" value="Delete">
           <td>
         </form>
+
       </tr>
     }
   </tbody>

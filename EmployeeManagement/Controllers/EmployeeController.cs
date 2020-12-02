@@ -31,8 +31,24 @@ public class EmployeeController : Controller
 
     [HttpPost]
     public ActionResult Add(Employee employee)  // Model binding
-    {
+    {        
         db.Employees.Add(employee);
+        db.SaveChanges();
+
+        return RedirectToAction(nameof(Index));
+    }
+
+    public ActionResult Edit(int id)
+    {
+        var employee = db.Employees.Find(id);
+        return View(employee);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Employee employee)
+    {  
+        db.Employees.Attach(employee);  
+        db.Employees.Update(employee);
         db.SaveChanges();
 
         return RedirectToAction(nameof(Index));
