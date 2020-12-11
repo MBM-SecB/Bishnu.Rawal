@@ -1,0 +1,16 @@
+@model Employee
+
+<h2 class="text-danger">Are you sure to delete folloing?</h2>
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">First Name : @Model.FirstName</li>
+    <li class="list-group-item">Last Name : @Model.Surname</li>
+    <li class="list-group-item">Address : @Model.Address</li>
+    <li class="list-group-item">Gender : @Model.Gender</li>
+</ul>
+
+<form asp-controller="Employee" asp-action="Delete" method="POST">
+    <input type="hidden" asp-for="Id" />
+    <input class="btn btn-danger" type="submit" value="Delete it you fool, don't ask again?">
+    <a class="btn btn-primary" href="/employee/index">Cancel</a>
+</form>

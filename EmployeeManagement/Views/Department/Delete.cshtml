@@ -1,0 +1,16 @@
+@model Department
+
+<h2 class="text-danger">Are you sure to delete folloing department?</h2>
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">Name : @Model.Name</li>
+    <li class="list-group-item">Code : @Model.Code</li>
+    <li class="list-group-item">Description : @Model.Description</li>
+    <li class="list-group-item">Start Date : @Model.StartDate</li>
+</ul>
+
+<form asp-controller="Department" asp-action="Delete" method="POST">
+    <input type="hidden" asp-for="Id" />
+    <input class="btn btn-danger" type="submit" value="Delete it you fool, don't ask again?">
+    <a class="btn btn-primary" href="/department/index">Cancel</a>
+</form>

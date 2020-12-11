@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using EmployeeManagement.Models;
 
 public class Employee
 {
@@ -17,4 +18,7 @@ public class Employee
 
     public char Gender { get; set; } = 'M';    
     public double Salary { get; set; }
+
+    public Department Department { get; set; }
+    public int DepartmentId { get; set; }
 }
